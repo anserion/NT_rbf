@@ -1,0 +1,900 @@
+object Form1: TForm1
+  Left = 393
+  Height = 617
+  Top = 134
+  Width = 856
+  AutoSize = True
+  BorderStyle = bsDialog
+  BorderWidth = 10
+  Caption = 'Простая RBF-нейронная сеть (Нейрокомпьютерные технологии, Ионисян А.С.)'
+  ClientHeight = 617
+  ClientWidth = 856
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.0.10.0'
+  object GB_Layer1: TGroupBox
+    Left = 528
+    Height = 464
+    Top = 64
+    Width = 169
+    Caption = 'Скрытый слой'
+    ClientHeight = 447
+    ClientWidth = 167
+    ParentFont = False
+    TabOrder = 2
+    object Panel_L1_neuron1: TPanel
+      Left = 3
+      Height = 105
+      Top = 0
+      Width = 160
+      ClientHeight = 105
+      ClientWidth = 160
+      TabOrder = 0
+      object PB_L1_w1: TPaintBox
+        Tag = 1
+        Left = 3
+        Height = 85
+        Top = 16
+        Width = 85
+        ParentFont = False
+        OnMouseDown = PB_w_MouseDown
+        OnPaint = PB_w_Paint
+      end
+      object Label_L1_neuron1: TLabel
+        Left = 5
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 1'
+        ParentColor = False
+      end
+      object Label_L1_sigma2_1: TLabel
+        Left = 101
+        Height = 14
+        Top = 16
+        Width = 43
+        Caption = 'sigma2'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_sigma2_1: TEdit
+        Tag = 1
+        Left = 101
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        OnKeyPress = Edit_L1_sigma2_KeyPress
+        ParentFont = False
+        TabOrder = 0
+        Text = '1'
+      end
+      object Label_L1_out1: TLabel
+        Left = 101
+        Height = 14
+        Top = 61
+        Width = 42
+        Caption = 'Выход'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_out1: TEdit
+        Tag = 1
+        Left = 101
+        Height = 27
+        Top = 74
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+    end
+    object Panel_L1_neuron2: TPanel
+      Left = 3
+      Height = 105
+      Top = 112
+      Width = 160
+      ClientHeight = 105
+      ClientWidth = 160
+      TabOrder = 1
+      object PB_L1_w2: TPaintBox
+        Tag = 2
+        Left = 5
+        Height = 85
+        Top = 16
+        Width = 85
+        ParentFont = False
+        OnMouseDown = PB_w_MouseDown
+        OnPaint = PB_w_Paint
+      end
+      object Label_L1_sigma2_2: TLabel
+        Left = 101
+        Height = 14
+        Top = 16
+        Width = 43
+        Caption = 'sigma2'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_sigma2_2: TEdit
+        Tag = 2
+        Left = 101
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        OnKeyPress = Edit_L1_sigma2_KeyPress
+        ParentFont = False
+        TabOrder = 0
+        Text = '1'
+      end
+      object Label_L1_out2: TLabel
+        Left = 101
+        Height = 14
+        Top = 61
+        Width = 42
+        Caption = 'Выход'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_out2: TEdit
+        Left = 101
+        Height = 27
+        Top = 74
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L1_neuron2: TLabel
+        Left = 5
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 2'
+        ParentColor = False
+      end
+    end
+    object Panel_L1_neuron3: TPanel
+      Left = 3
+      Height = 105
+      Top = 224
+      Width = 160
+      ClientHeight = 105
+      ClientWidth = 160
+      TabOrder = 2
+      object PB_L1_w3: TPaintBox
+        Tag = 3
+        Left = 3
+        Height = 85
+        Top = 16
+        Width = 85
+        ParentFont = False
+        OnMouseDown = PB_w_MouseDown
+        OnPaint = PB_w_Paint
+      end
+      object Label_L1_sigma2_3: TLabel
+        Left = 101
+        Height = 14
+        Top = 16
+        Width = 43
+        Caption = 'sigma2'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_sigma2_3: TEdit
+        Tag = 3
+        Left = 101
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        OnKeyPress = Edit_L1_sigma2_KeyPress
+        ParentFont = False
+        TabOrder = 0
+        Text = '1'
+      end
+      object Label_out3: TLabel
+        Left = 101
+        Height = 14
+        Top = 61
+        Width = 42
+        Caption = 'Выход'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_out3: TEdit
+        Left = 101
+        Height = 27
+        Top = 74
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L1_neuron3: TLabel
+        Left = 5
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 3'
+        ParentColor = False
+      end
+    end
+    object Panel_L1_neuron4: TPanel
+      Left = 3
+      Height = 105
+      Top = 336
+      Width = 160
+      ClientHeight = 105
+      ClientWidth = 160
+      TabOrder = 3
+      object PB_L1_w4: TPaintBox
+        Tag = 4
+        Left = 3
+        Height = 85
+        Top = 16
+        Width = 85
+        ParentFont = False
+        OnMouseDown = PB_w_MouseDown
+        OnPaint = PB_w_Paint
+      end
+      object Label_L1_sigma2_4: TLabel
+        Left = 101
+        Height = 14
+        Top = 16
+        Width = 43
+        Caption = 'sigma2'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_sigma2_4: TEdit
+        Tag = 4
+        Left = 101
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        OnKeyPress = Edit_L1_sigma2_KeyPress
+        ParentFont = False
+        TabOrder = 0
+        Text = '1'
+      end
+      object Label_L1_out4: TLabel
+        Left = 101
+        Height = 14
+        Top = 61
+        Width = 42
+        Caption = 'Выход'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_L1_out4: TEdit
+        Left = 101
+        Height = 27
+        Top = 74
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L1_neuron4: TLabel
+        Left = 5
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 4'
+        ParentColor = False
+      end
+    end
+  end
+  object Edit_student_name: TEdit
+    Left = 152
+    Height = 32
+    Top = 8
+    Width = 364
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 0
+    Text = 'Нейрокомпьютерная технология'
+  end
+  object Label_student_name: TLabel
+    Left = 16
+    Height = 19
+    Top = 14
+    Width = 128
+    Caption = 'ФИО студента'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+  end
+  object BTN_orig_create: TButton
+    Left = 528
+    Height = 32
+    Top = 8
+    Width = 169
+    Caption = 'Создать эталоны'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    OnClick = BTN_orig_createClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object PB_receptors: TPaintBox
+    Left = 16
+    Height = 392
+    Top = 64
+    Width = 500
+    ParentFont = False
+    OnMouseDown = PB_receptorsMouseDown
+    OnPaint = PB_receptorsPaint
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 14
+    Top = 48
+    Width = 242
+    Caption = 'Рецепторное поле (РП) - входной слой'
+    ParentColor = False
+    ParentFont = False
+  end
+  object PB_orig1: TPaintBox
+    Tag = 1
+    Left = 16
+    Height = 96
+    Top = 480
+    Width = 116
+    ParentFont = False
+    OnMouseDown = PB_orig_MouseDown
+    OnPaint = PB_orig_Paint
+  end
+  object BTN_orig1_draw: TButton
+    Tag = 1
+    Left = 16
+    Height = 32
+    Top = 577
+    Width = 116
+    Caption = 'в РП'
+    OnClick = BTN_orig_to_S_Click
+    ParentFont = False
+    TabOrder = 3
+  end
+  object PB_orig2: TPaintBox
+    Tag = 2
+    Left = 144
+    Height = 96
+    Top = 480
+    Width = 116
+    ParentFont = False
+    OnMouseDown = PB_orig_MouseDown
+    OnPaint = PB_orig_Paint
+  end
+  object BTN_orig2_draw: TButton
+    Tag = 2
+    Left = 144
+    Height = 32
+    Top = 577
+    Width = 116
+    Caption = 'в РП'
+    OnClick = BTN_orig_to_S_Click
+    ParentFont = False
+    TabOrder = 4
+  end
+  object PB_orig3: TPaintBox
+    Tag = 3
+    Left = 272
+    Height = 96
+    Top = 480
+    Width = 116
+    ParentFont = False
+    OnMouseDown = PB_orig_MouseDown
+    OnPaint = PB_orig_Paint
+  end
+  object BTN_orig3_draw: TButton
+    Tag = 3
+    Left = 272
+    Height = 32
+    Top = 577
+    Width = 116
+    Caption = 'в РП'
+    OnClick = BTN_orig_to_S_Click
+    ParentFont = False
+    TabOrder = 5
+  end
+  object PB_orig4: TPaintBox
+    Tag = 4
+    Left = 400
+    Height = 96
+    Top = 480
+    Width = 116
+    ParentFont = False
+    OnMouseDown = PB_orig_MouseDown
+    OnPaint = PB_orig_Paint
+  end
+  object BTN_orig4_draw: TButton
+    Tag = 4
+    Left = 400
+    Height = 32
+    Top = 577
+    Width = 116
+    Caption = 'в РП'
+    OnClick = BTN_orig_to_S_Click
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Label_orig1: TLabel
+    Left = 16
+    Height = 14
+    Top = 462
+    Width = 56
+    Caption = 'Эталон 1'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_orig2: TLabel
+    Left = 144
+    Height = 14
+    Top = 462
+    Width = 56
+    Caption = 'Эталон 2'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_orig3: TLabel
+    Left = 272
+    Height = 14
+    Top = 462
+    Width = 56
+    Caption = 'Эталон 3'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_orig4: TLabel
+    Left = 400
+    Height = 14
+    Top = 462
+    Width = 56
+    Caption = 'Эталон 4'
+    ParentColor = False
+    ParentFont = False
+  end
+  object BTN_reset: TButton
+    Left = 704
+    Height = 32
+    Top = 8
+    Width = 144
+    Caption = 'Сброс'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    OnClick = BTN_resetClick
+    ParentFont = False
+    TabOrder = 7
+  end
+  object GB_Layer2: TGroupBox
+    Left = 704
+    Height = 544
+    Top = 64
+    Width = 144
+    Caption = 'выходной слой'
+    ClientHeight = 527
+    ClientWidth = 142
+    ParentFont = False
+    TabOrder = 8
+    object Panel_L2_neuron1: TPanel
+      Left = 5
+      Height = 105
+      Top = 0
+      Width = 131
+      ClientHeight = 105
+      ClientWidth = 131
+      TabOrder = 0
+      object Label_L2_w_1_6: TLabel
+        Left = 0
+        Height = 14
+        Top = 16
+        Width = 26
+        Caption = 'w1='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_2_6: TLabel
+        Left = 0
+        Height = 14
+        Top = 34
+        Width = 26
+        Caption = 'w2='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_3_6: TLabel
+        Left = 0
+        Height = 14
+        Top = 52
+        Width = 26
+        Caption = 'w3='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_4_6: TLabel
+        Left = 0
+        Height = 14
+        Top = 70
+        Width = 26
+        Caption = 'w4='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_scalar_3_1: TLabel
+        Left = 72
+        Height = 14
+        Top = 16
+        Width = 45
+        Caption = 'Скаляр'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_scalar_3_1: TEdit
+        Left = 72
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+      object Label_out_3_1: TLabel
+        Left = 72
+        Height = 14
+        Top = 64
+        Width = 56
+        Caption = 'Сигмоид'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_out_3_1: TEdit
+        Left = 72
+        Height = 27
+        Top = 77
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L2_neuron1: TLabel
+        Left = 1
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 1'
+        ParentColor = False
+      end
+    end
+    object Panel_L2_neuron2: TPanel
+      Left = 5
+      Height = 105
+      Top = 112
+      Width = 131
+      ClientHeight = 105
+      ClientWidth = 131
+      TabOrder = 1
+      object Label_L2_w_1_7: TLabel
+        Left = 0
+        Height = 14
+        Top = 16
+        Width = 26
+        Caption = 'w1='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_2_7: TLabel
+        Left = 0
+        Height = 14
+        Top = 34
+        Width = 26
+        Caption = 'w2='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_3_7: TLabel
+        Left = 0
+        Height = 14
+        Top = 52
+        Width = 26
+        Caption = 'w3='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_4_7: TLabel
+        Left = 0
+        Height = 14
+        Top = 70
+        Width = 26
+        Caption = 'w4='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_scalar_3_2: TLabel
+        Left = 72
+        Height = 14
+        Top = 16
+        Width = 45
+        Caption = 'Скаляр'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_scalar_3_2: TEdit
+        Left = 72
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+      object Label_out_3_2: TLabel
+        Left = 72
+        Height = 14
+        Top = 64
+        Width = 56
+        Caption = 'Сигмоид'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_out_3_2: TEdit
+        Left = 72
+        Height = 27
+        Top = 77
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L2_neuron2: TLabel
+        Left = 1
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 2'
+        ParentColor = False
+      end
+    end
+    object Panel_L2_neuron3: TPanel
+      Left = 5
+      Height = 105
+      Top = 224
+      Width = 131
+      ClientHeight = 105
+      ClientWidth = 131
+      TabOrder = 2
+      object Label_L2_w_1_8: TLabel
+        Left = 0
+        Height = 14
+        Top = 15
+        Width = 26
+        Caption = 'w1='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_2_8: TLabel
+        Left = 0
+        Height = 14
+        Top = 33
+        Width = 26
+        Caption = 'w2='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_3_8: TLabel
+        Left = 0
+        Height = 14
+        Top = 51
+        Width = 26
+        Caption = 'w3='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_4_8: TLabel
+        Left = 0
+        Height = 14
+        Top = 69
+        Width = 26
+        Caption = 'w4='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_scalar_3_3: TLabel
+        Left = 72
+        Height = 14
+        Top = 15
+        Width = 45
+        Caption = 'Скаляр'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_scalar_3_3: TEdit
+        Left = 72
+        Height = 27
+        Top = 31
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+      object Label_out_3_3: TLabel
+        Left = 72
+        Height = 14
+        Top = 63
+        Width = 56
+        Caption = 'Сигмоид'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_out_3_3: TEdit
+        Left = 72
+        Height = 27
+        Top = 76
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L2_neuron3: TLabel
+        Left = 1
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 3'
+        ParentColor = False
+      end
+    end
+    object Panel_L2_neuron4: TPanel
+      Left = 5
+      Height = 105
+      Top = 336
+      Width = 131
+      ClientHeight = 105
+      ClientWidth = 131
+      TabOrder = 3
+      object Label_L2_w_1_9: TLabel
+        Left = 0
+        Height = 14
+        Top = 16
+        Width = 26
+        Caption = 'w1='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_2_9: TLabel
+        Left = 0
+        Height = 14
+        Top = 34
+        Width = 26
+        Caption = 'w2='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_3_9: TLabel
+        Left = 0
+        Height = 14
+        Top = 52
+        Width = 26
+        Caption = 'w3='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_L2_w_4_9: TLabel
+        Left = 0
+        Height = 14
+        Top = 70
+        Width = 26
+        Caption = 'w4='
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label_scalar_3_4: TLabel
+        Left = 72
+        Height = 14
+        Top = 16
+        Width = 45
+        Caption = 'Скаляр'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_scalar_3_4: TEdit
+        Left = 72
+        Height = 27
+        Top = 32
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+        Text = '0'
+      end
+      object Label_out_3_4: TLabel
+        Left = 72
+        Height = 14
+        Top = 64
+        Width = 56
+        Caption = 'Сигмоид'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_out_3_4: TEdit
+        Left = 72
+        Height = 27
+        Top = 77
+        Width = 55
+        NumbersOnly = True
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = '0'
+      end
+      object Label_L2_neuron4: TLabel
+        Left = 1
+        Height = 14
+        Top = 0
+        Width = 58
+        Caption = 'нейрон 4'
+        ParentColor = False
+      end
+    end
+    object Panel_L2_neuron5: TPanel
+      Left = 8
+      Height = 72
+      Top = 448
+      Width = 131
+      ClientHeight = 72
+      ClientWidth = 131
+      TabOrder = 4
+      object Label_L2_neuron5: TLabel
+        Left = 1
+        Height = 14
+        Top = 0
+        Width = 119
+        Caption = 'нейрон 5 (не расп.)'
+        ParentColor = False
+      end
+      object Label1: TLabel
+        Left = 1
+        Height = 14
+        Top = 24
+        Width = 93
+        Caption = 'Критерий нуля'
+        ParentColor = False
+      end
+      object Edit_L2_not_origs: TEdit
+        Left = 1
+        Height = 27
+        Top = 40
+        Width = 123
+        OnKeyPress = Edit_L2_not_origsKeyPress
+        TabOrder = 0
+        Text = '0'
+      end
+    end
+  end
+end
